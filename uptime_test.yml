@@ -1,5 +1,5 @@
 ---
- - hosts: test
+ - name: Checking host uptime
    remote_user: ansb
    become: true
    gather_facts: true
