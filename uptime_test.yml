@@ -1,5 +1,5 @@
 ---
- - name: Checking host uptime
+ - hosts: Linux_nonprod
    remote_user: ansb
    become: true
    gather_facts: true
