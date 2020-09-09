@@ -1,0 +1,11 @@
+---
+- name: installing httpd package
+  become: true
+  hosts: test
+  vars:
+   webserver: httpd
+  tasks:
+  - name: "copying {{webserver}} config file"
+    copy:
+     name: /etc/httpd/conf/httpd.conf
+     dest: /etc/httpd/conf/httpd.conf

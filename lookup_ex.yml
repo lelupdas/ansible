@@ -1,0 +1,8 @@
+- name: Lookup example to copy auth file
+  hosts: test
+  become: true
+  vars:
+   contents: "{{lookup ('file', '/etc/hosts') | replace('\n', '')}}"
+  tasks:
+  - name: Displaying variable value with lookup.
+    debug: msg="The value of the host file is {{contents}}" 

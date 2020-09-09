@@ -1,0 +1,16 @@
+---
+  - name: Disable selinux    
+    hosts: infra
+    become: yes
+    remote_user: ansb
+    tasks:
+    - name: modifing enforcing to disable
+      lineinfile:
+       dest: /etc/selinux/config
+       regexp: '^SELINUX='
+       line: SELINUX=disabled
+       backup: yes
+      register: se_out
+    - name: Show the output
+      debug:
+       var: se_out['diff']

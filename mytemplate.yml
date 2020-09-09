@@ -1,0 +1,11 @@
+---
+- name: Jinja2 template test
+  hosts: test
+  become: true
+  vars:
+   ansible_user: ansb
+  tasks:
+  - name: install my_app configuration file from template
+    template:
+     src: my_app.conf.j2
+     dest: /home/ansb/my_app.conf

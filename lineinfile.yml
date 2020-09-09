@@ -1,0 +1,11 @@
+---
+- name: Checking to insert the line in a file
+  become: true
+  hosts: test
+  become_method: sudo
+  tasks:
+  - name: Inserting a line. 
+    lineinfile:
+     dest: /tmp/test.txt
+     line: '. /etc/profile'
+     state: present 

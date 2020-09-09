@@ -1,0 +1,14 @@
+---
+- name: Checking handler
+  hosts: test
+  become: true
+  vars:
+   apache: httpd
+  tasks:
+  - name: "Copying the {{apache}} config file "
+    copy: src=/etc/httpd/conf/httpd.conf dest=/etc/httpd/conf/httpd.conf
+    notify:
+     restart_apache
+  handlers:
+   - name: restart_apache
+     service: name="{{apache}}" state=restarted
