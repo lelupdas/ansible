@@ -1,6 +1,6 @@
 ---
 - name: This is to display loop concept
-  hosts: localhost
+  hosts: Linux_nonprod 
   user: ansb
   tasks: 
   - name: How to user with_items
