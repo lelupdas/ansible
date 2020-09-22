@@ -1,6 +1,6 @@
 ---
 - name: how to use register to store module response
-  hosts: web
+  hosts: test
   user: ansb
   tasks:
   - name: store the output of module with register
