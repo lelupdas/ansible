@@ -1,6 +1,5 @@
 ---
-  - name: Disable selinux    
-    hosts: Linux_nonprod
+  - hosts: Linux_nonprod
     become: yes
     remote_user: ansb
     tasks:
